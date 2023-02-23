@@ -21,7 +21,6 @@ class MyApp extends StatelessWidget {
             width: size.width,
             connectDots: true,
             numberOfParticles: 100,
-            
           ),
         ),
       ),
