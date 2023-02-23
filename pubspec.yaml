@@ -1,6 +1,6 @@
 name: particules_js
 description: A package that provides an easy way to add particles js in flutter project.
-version: 0.0.6
+version: 0.0.7
 homepage: https://github.com/mevos19/particules_js
 
 environment:

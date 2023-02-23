@@ -17,7 +17,7 @@ https://user-images.githubusercontent.com/41967952/220877516-51ed18d8-d519-464c-
 
 ```yaml
 dependencies:
-  particules_js: ^0.0.6
+  particules_js: ^0.0.7
 ```
 
 ### Import the package
