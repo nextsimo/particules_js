@@ -8,20 +8,28 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      title: 'Particules JS Demo',
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return MaterialApp(
-      title: 'Particules JS Demo',
-      home: Scaffold(
-        body: Center(
-          child: ParticulesJs(
-            height: size.height,
-            width: size.width,
-            connectDots: true,
-            numberOfParticles: 100,
-          ),
+    return Scaffold(
+      body: Center(
+        child: ParticulesJs(
+          height: size.height,
+          width: size.width,
+          connectDots: true,
+          numberOfParticles: 100,
         ),
       ),
     );

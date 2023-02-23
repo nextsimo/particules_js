@@ -3,7 +3,10 @@ library particules_js;
 import 'dart:math';
 import 'package:flutter/material.dart';
 
+
+
 class ParticulesJs extends StatefulWidget {
+  /// A Flutter package to create a particle animation like the one on the website https://vincentgarreau.com/particles.js/
   const ParticulesJs({
     Key? key,
     required this.height,
@@ -32,26 +35,44 @@ class ParticulesJs extends StatefulWidget {
     this.connectDots = false,
     this.lineColor = const Color.fromARGB(90, 155, 39, 176),
   }) : super(key: key);
-  final double awayRadius;
-  final double height;
-  final double width;
-  final bool onTapAnimation;
-  final double numberOfParticles;
-  final double speedOfParticles;
-  final bool isRandomColor;
-  final Color particleColor;
-  final Duration awayAnimationDuration;
-  final Curve awayAnimationCurve;
-  final double maxParticleSize;
-  final bool isRandSize;
-  final List<Color> randColorList;
-  final bool enableHover;
-  final Color hoverColor;
-  final double hoverRadius;
-  final bool connectDots;
-  final Color lineColor;
 
-  /// The width of the line
+  /// The radius of the circle from which the particles move away when the mouse is hovered over them
+  final double awayRadius;
+  /// The height of the widget
+  final double height;
+  /// The width of the widget
+  final double width;
+  /// If true, the particles will move away from the mouse when hovered over or tapped
+  final bool onTapAnimation;
+  /// The number of particles to be displayed
+  final double numberOfParticles;
+  /// The speed of the particles
+  final double speedOfParticles;
+  /// If true, the particles will have random colors
+  final bool isRandomColor;
+  /// The color of the particles
+  final Color particleColor;
+  /// The duration of the animation when the particles move away from the mouse
+  final Duration awayAnimationDuration;
+  /// The curve of the animation when the particles move away from the mouse
+  final Curve awayAnimationCurve;
+  /// The maximum size of the particles
+  final double maxParticleSize;
+  /// If true, the particles will have random sizes
+  final bool isRandSize;
+  /// The list of colors from which the particles will have random colors
+  final List<Color> randColorList;
+  /// If true, the particles will have a hover effect
+  final bool enableHover;
+  /// The color of the particles when hovered over
+  final Color hoverColor;
+  /// The radius of the circle from which the particles move away when the mouse is hovered over them
+  final double hoverRadius;
+  /// If true, the particles will be connected by lines
+  final bool connectDots;
+  /// The color of the lines
+  final Color lineColor;
+  /// The width of the lines
   final double lineStrokeWidth;
 
   @override
@@ -71,11 +92,11 @@ class ParticulesJsState extends State<ParticulesJs>
   var rng = Random();
   double randValue = 0;
   List<double> randomDouble = [];
-  ParticulesJsState();
   List<double> randomSize = [];
   List<int> hoverIndex = [];
   List<List> lineOffset = [];
 
+  /// This function initializes the offsets of the particles
   void initializeOffsets(_) {
     for (int index = 0; index < widget.numberOfParticles; index++) {
       offsets.add(Offset(
@@ -98,6 +119,7 @@ class ParticulesJsState extends State<ParticulesJs>
     super.initState();
   }
 
+  /// This function is called every time the animation is updated
   void _myListener() {
     setState(
       () {
@@ -134,6 +156,7 @@ class ParticulesJsState extends State<ParticulesJs>
     super.dispose();
   }
 
+  /// This function is called when the widget is built
   void changeDirection() async {
     Future.doWhile(
       () async {
@@ -146,6 +169,7 @@ class ParticulesJsState extends State<ParticulesJs>
     );
   }
 
+  /// THis function help to connect the dots
   void connectLines() {
     lineOffset = [];
     double distanceBetween = 0;
@@ -162,6 +186,7 @@ class ParticulesJsState extends State<ParticulesJs>
     }
   }
 
+  /// This function is called when the mouse is hovered over the widget
   void onTapGesture(double tapDx, double tapDy) {
     awayAnimationController = AnimationController(
         duration: widget.awayAnimationDuration, vsync: this);
@@ -227,6 +252,7 @@ class ParticulesJsState extends State<ParticulesJs>
     }
   }
 
+  /// called when the mouse is hovered over the widget
   void onHover(tapDx, tapDy) {
     {
       awayAnimationController = AnimationController(
@@ -274,7 +300,7 @@ class ParticulesJsState extends State<ParticulesJs>
         height: widget.height,
         width: widget.width,
         child: CustomPaint(
-          painter: ParticlePainter(
+          painter: _ParticlePainter(
               offsets: offsets,
               isRandomColor: widget.isRandomColor,
               particleColor: widget.particleColor,
@@ -294,7 +320,7 @@ class ParticulesJsState extends State<ParticulesJs>
   }
 }
 
-class ParticlePainter extends CustomPainter {
+class _ParticlePainter extends CustomPainter {
   final List<Offset> offsets;
   final bool isRandomColor;
   final Color particleColor;
@@ -313,7 +339,7 @@ class ParticlePainter extends CustomPainter {
   final Color lineColor;
   final double lineStrokeWidth;
 
-  ParticlePainter({
+  _ParticlePainter({
     required this.enableHover,
     required this.randColorList,
     required this.isRandSize,
