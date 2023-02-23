@@ -3,8 +3,6 @@ library particules_js;
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-
-
 class ParticulesJs extends StatefulWidget {
   /// A Flutter package to create a particle animation like the one on the website https://vincentgarreau.com/particles.js/
   const ParticulesJs({
@@ -38,40 +36,58 @@ class ParticulesJs extends StatefulWidget {
 
   /// The radius of the circle from which the particles move away when the mouse is hovered over them
   final double awayRadius;
+
   /// The height of the widget
   final double height;
+
   /// The width of the widget
   final double width;
+
   /// If true, the particles will move away from the mouse when hovered over or tapped
   final bool onTapAnimation;
+
   /// The number of particles to be displayed
   final double numberOfParticles;
+
   /// The speed of the particles
   final double speedOfParticles;
+
   /// If true, the particles will have random colors
   final bool isRandomColor;
+
   /// The color of the particles
   final Color particleColor;
+
   /// The duration of the animation when the particles move away from the mouse
   final Duration awayAnimationDuration;
+
   /// The curve of the animation when the particles move away from the mouse
   final Curve awayAnimationCurve;
+
   /// The maximum size of the particles
   final double maxParticleSize;
+
   /// If true, the particles will have random sizes
   final bool isRandSize;
+
   /// The list of colors from which the particles will have random colors
   final List<Color> randColorList;
+
   /// If true, the particles will have a hover effect
   final bool enableHover;
+
   /// The color of the particles when hovered over
   final Color hoverColor;
+
   /// The radius of the circle from which the particles move away when the mouse is hovered over them
   final double hoverRadius;
+
   /// If true, the particles will be connected by lines
   final bool connectDots;
+
   /// The color of the lines
   final Color lineColor;
+
   /// The width of the lines
   final double lineStrokeWidth;
 

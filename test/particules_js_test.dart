@@ -11,6 +11,5 @@ void main() {
 
     expect(particules.height, 100);
     expect(particules.width, 100);
-    
   });
 }
