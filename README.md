@@ -1,4 +1,4 @@
-# Particules JS for Flutter
+# Particles JS for Flutter
 [![pub package](https://img.shields.io/pub/v/particules_js.svg)](https://pub.dartlang.org/packages/particules_js)
 
 A Flutter plugin for Particules JS.
