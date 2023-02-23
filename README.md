@@ -34,7 +34,6 @@ ParticulesJs(
             numberOfParticles: 100
             ),
 ```
-
 ## Example
 
 See the [example](
