@@ -7,9 +7,11 @@ A Flutter plugin for Particules JS.
 
 ### Demo
 
-https://user-images.githubusercontent.com/41967952/220877516-51ed18d8-d519-464c-ad86-8c934455852c.mov
+![Alt Text](https://media.giphy.com/media/4JZEFuPLrC4cxR1gpA/giphy.gif)
 
 https://user-images.githubusercontent.com/41967952/220878624-ec5efe38-13fa-4e1e-8ca3-6505d08bdf3f.mp4
+
+https://user-images.githubusercontent.com/41967952/220877516-51ed18d8-d519-464c-ad86-8c934455852c.mov
 
 ### Add the dependency
 
